@@ -9,7 +9,7 @@ public class Main {
 
 class NamePrinter {
     /**
-     * Prints the names of the group members separated by dashes "-".
+     * Prints the names of the group members separated by dashes ";".
      */
     public void printNames() {
         String separator = ";";
