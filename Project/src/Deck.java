@@ -24,12 +24,10 @@ public class Deck {
   }
 
   public void printCards() {
-
       int i = 1;
       for (Card c:cardList){
           System.out.println((i++) + ": " + c.getValue() + " " + c.getSuit());
       }
-
   }
 
 }
