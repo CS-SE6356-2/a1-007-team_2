@@ -25,8 +25,12 @@ public class CrazyEights {
             p.setHand(playerHand);
         }
 
+        Pile stockPile = new Pile(deck.deal());
+
         playerOne.showHand();
         playerTwo.showHand();
+
+
     }
 
 }

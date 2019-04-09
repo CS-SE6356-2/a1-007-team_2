@@ -7,8 +7,15 @@ public class Pile {
     int numberOfCards;
 
     // Constructor
-    public Pile(){
-
+    public Pile(Card starter){
+        discardPile.add(starter);
+        numberOfCards = discardPile.size();
     }
+
+    public Card getTopCard(){
+        Card card = discardPile.get(numberOfCards);
+        return card;
+    }
+
 
 }

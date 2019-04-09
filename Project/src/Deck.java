@@ -38,6 +38,10 @@ public class Deck {
         return hand;
     }
 
+    public Card deal(){
+        return cardList.remove(0);
+    }
+
     // Print the cards in the instance of a Deck
     public void printCards() {
         int i = 1;
