@@ -1,4 +1,5 @@
 import org.junit.Test;
+import static org.junit.Assert.*;
 
 public class JUnitDeckTest {
 
@@ -6,8 +7,10 @@ public class JUnitDeckTest {
     @Test
     public void testDeckShuffle() {
         Deck testDeck = new Deck();
-        testDeck.shuffle();
-        testDeck.printCards();
+        Deck shuffledDeck = new Deck();
+        shuffledDeck.shuffle();
+        shuffledDeck.printCards();
+        assertNotEquals(testDeck, shuffledDeck);
     }
 
 }
