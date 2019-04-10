@@ -4,17 +4,15 @@ public class Pile {
 
     // attributes for Pile class
     ArrayList<Card> discardPile = new ArrayList<>(52);
-    int numberOfCards;
 
     // Constructor
     public Pile(Card starter){
         discardPile.add(starter);
-        numberOfCards = discardPile.size();
     }
 
     // Returns top card of discard pile
     public Card getTopCard(){
-        Card card = discardPile.get(numberOfCards);
+        Card card = discardPile.get(discardPile.size());
         return card;
     }
 
@@ -23,11 +21,9 @@ public class Pile {
         Card topCard = getTopCard();
         if(c.getValue() == "8"){
             discardPile.add(c);
-            numberOfCards++;
         }
         else if(c.getSuit() == topCard.getSuit() || c.getValue() == getTopCard().getValue()){
             discardPile.add(c);
-            numberOfCards++;
         }
         else{   //Card is not playable
             System.out.println("Card is not playable. Please make another choice.");
