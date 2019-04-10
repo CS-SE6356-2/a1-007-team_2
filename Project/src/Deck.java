@@ -27,7 +27,7 @@ public class Deck {
         cardList = temp;
     }
 
-    // Method to deal five cars to a player from the Deck instance
+    // Method to deal five cards to a player from the Deck instance
     public ArrayList<Card> dealToPlayer(){
         ArrayList<Card> hand = new ArrayList<>(5);
 
@@ -38,6 +38,7 @@ public class Deck {
         return hand;
     }
 
+    // Method to deal one card at a time
     public Card deal(){
         return cardList.remove(0);
     }

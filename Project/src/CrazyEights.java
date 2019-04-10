@@ -30,7 +30,8 @@ public class CrazyEights {
         playerOne.showHand();
         playerTwo.showHand();
 
-
+        // Player makes a choice from playable cards
+        // Choice is added to discard pile
     }
 
 }
