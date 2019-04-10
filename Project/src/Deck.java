@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Deck {
 
     // attributes of the Deck class
-    private ArrayList<Card> cardList;
+    public ArrayList<Card> cardList;
     private int topCard;
 
     // Constructor
@@ -44,6 +44,7 @@ public class Deck {
     }
 
     // Print the cards in the instance of a Deck
+    // Used for testing purposes
     public void printCards() {
         int i = 1;
         for (Card c : cardList) {
