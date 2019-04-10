@@ -5,7 +5,9 @@ import org.junit.runners.Suite;
 
 @Suite.SuiteClasses({
         // Test Class for Deck
-        JUnitDeckTest.class
+        JUnitDeckTest.class,
+        // Test Class for Pile
+        JUnitPileTest.class
 })
 
 public class JUnitTestSuite {
