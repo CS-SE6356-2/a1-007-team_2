@@ -26,12 +26,22 @@ public class CrazyEights {
         }
 
         Pile stockPile = new Pile(deck.deal());
+        getTopCard();
 
+        
         playerOne.showHand();
         playerTwo.showHand();
 
-        // Player makes a choice from playable cards
-        // Choice is added to discard pile
-    }
+        getTopCard();
+        
+        // Player One takes turn.
+        playerOne.addcard();
+      
+        // Player two takes turn.
+
+        playerTwo.addcard();
+    
+    
+     }
 
 }
