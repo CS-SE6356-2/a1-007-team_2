@@ -32,14 +32,13 @@ public class CrazyEights {
         playerOne.showHand();
         playerTwo.showHand();
 
-        getTopCard();
+     
         
         // Player One takes turn.
-        playerOne.addcard();
+     
       
         // Player two takes turn.
 
-        playerTwo.addcard();
     
     
      }
