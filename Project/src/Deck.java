@@ -4,7 +4,6 @@ public class Deck {
 
     // attributes of the Deck class
     public ArrayList<Card> cardList;
-    private int topCard;
 
     // Constructor
     public Deck() {
@@ -28,14 +27,12 @@ public class Deck {
     }
 
     // Method to deal five cards to a player from the Deck instance
-    public ArrayList<Card> dealToPlayer(){
-        ArrayList<Card> hand = new ArrayList<>(5);
-
-        for(int i = 0; i < 5; i++){
-            hand.add(cardList.remove(0));
+    public void dealToPlayers(ArrayList<Player> playerList, Deck deck){
+        for (int i = 0; i < 5; i++) {
+            for (Player p:playerList) {
+                p.playerHand.add(deck.deal());
+            }
         }
-
-        return hand;
     }
 
     // Method to deal one card at a time
