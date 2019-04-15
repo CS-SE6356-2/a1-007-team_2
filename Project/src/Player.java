@@ -3,8 +3,8 @@ import java.util.ArrayList;
 public class Player {
 
     // attributes of Player class
-    public String playerName;
-    public ArrayList<Card> playerHand;
+    private String playerName;
+    private ArrayList<Card> playerHand = new ArrayList<>(5);
 
     // Constructor
     public Player(String name){
@@ -12,11 +12,17 @@ public class Player {
     }
 
     // Set a ArrayList of Card objects as the players hand
-    public void setHand(ArrayList<Card> deckDeal){
-        this.playerHand = deckDeal;
+    public ArrayList<Card> getHand(){
+        return playerHand;
+    }
+
+    // Get player name
+    public String getPlayerName() {
+        return playerName;
     }
 
     // Prints cards in the Players hand
+    // Used for Testing
     public void showHand(){
         System.out.println(this.playerHand);
     }
