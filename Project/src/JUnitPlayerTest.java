@@ -9,8 +9,15 @@ public class JUnitPlayerTest {
     public void testSetHand(){
         Deck testDeck = new Deck();
         Player testPlayer = new Player("One");
-        ArrayList<Card> testDeal = testDeck.dealToPlayer();
-        testPlayer.setHand(testDeal);
-        assertEquals(testPlayer.playerHand, testDeal);
+        ArrayList<Card> testHand = new ArrayList<>(5);
+        ArrayList<Player> testPlayerList = new ArrayList<>(4);
+
+        for (int i = 0; i < 4; i++){
+            testHand.add(testDeck.getCardList().get(i));
+        }
+
+        testPlayerList.add(testPlayer);
+        testDeck.dealToPlayers(testPlayerList, testDeck);
+        assertEquals(testPlayer.getHand(), testHand);
     }
 }
