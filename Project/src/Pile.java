@@ -3,7 +3,7 @@ import java.util.Stack;
 public class Pile {
 
     // attributes for Pile class
-    public Stack<Card> discardPile = new Stack<>();
+    private Stack<Card> discardPile = new Stack<>();
 
     // Constructor
     public Pile(Card starter){
@@ -17,17 +17,7 @@ public class Pile {
     }
 
     // Adds card to top of discard pile
-    public void addCard(Card c){
-        Card topCard = getTopCard();
-        if(c.getValue().equals("8")){
-            discardPile.push(c);
-        }
-        else if(c.getSuit().equals(topCard.getSuit()) || c.getValue().equals(getTopCard().getValue())){
-            discardPile.push(c);
-        }
-        else{   //Card is not playable
-            System.out.println("Card is not playable. Please make another choice.");
-            // TODO Add method to draw a card from the deck
-        }
+    public void addCard(Card card){
+        discardPile.add(card);
     }
 }
