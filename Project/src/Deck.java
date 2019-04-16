@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Deck {
 
     // attributes of the Deck class
-    public ArrayList<Card> cardList;
+    private ArrayList<Card> cardList;
 
     // Constructor
     public Deck() {
@@ -27,17 +27,22 @@ public class Deck {
     }
 
     // Method to deal five cards to a player from the Deck instance
-    public void dealToPlayers(ArrayList<Player> playerList, Deck deck){
+    public void dealToPlayers(ArrayList<Player> playerList, Deck deck) {
         for (int i = 0; i < 5; i++) {
             for (Player p:playerList) {
-                p.playerHand.add(deck.deal());
+                p.getHand().add(deck.deal());
             }
         }
     }
 
     // Method to deal one card at a time
-    public Card deal(){
+    public Card deal() {
         return cardList.remove(0);
+    }
+
+    // Method to get the cardList of a Deck
+    public ArrayList<Card> getCardList() {
+        return cardList;
     }
 
     // Print the cards in the instance of a Deck
