@@ -59,7 +59,7 @@ public class Controller{
                 JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null,
                 choices, choices[0]);
 
-        // If Option to play a Single Player game is selected Initialize the game
+        // If Option to play a Single Main.Player game is selected Initialize the game
         if (result == JOptionPane.YES_OPTION){
             this.game = new CrazyEights();
             this.players = game.startLocalGame(playerOneName.getText());
@@ -89,7 +89,8 @@ public class Controller{
 
             // get the users cards and choose the correct image to display
             String playCard = c.getValue()+c.getSuit().substring(0,1);
-            Image pic = new Image("/GUI/images/cards/"+playCard+".png");
+            String imagePath = String.valueOf(getClass().getResource("images/cards/" + playCard + ".png"));
+            Image pic = new Image(imagePath);
             ImageView image = new ImageView(pic);
             image.setFitHeight(143);
             image.setFitWidth(111);
@@ -134,7 +135,8 @@ public class Controller{
     // Updates the the UI with the most recent card played
     public void updatePile(Card card){
         String playCard = card.getValue()+card.getSuit().substring(0,1);
-        Image pic = new Image("/GUI/images/cards/"+playCard+".png");
+        String imagePath = String.valueOf(getClass().getResource("images/cards/" + playCard + ".png"));
+        Image pic = new Image(imagePath);
         pileImg.setImage(pic);
     }
 

@@ -1,9 +1,9 @@
+import org.junit.Assert;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 public class JUnitDeckTest{
 
-    // Test to see if the Deck is properly shuffled
+    // Test to see if the Main.Deck is properly shuffled
     @Test
     public void testDeckShuffle() {
         Deck testDeck = new Deck();
@@ -11,7 +11,7 @@ public class JUnitDeckTest{
         shuffledDeck.shuffle();
         System.out.println("Print Shuffled Cards:");
         shuffledDeck.printCards();
-        assertNotEquals(testDeck, shuffledDeck);
+        Assert.assertNotEquals(testDeck, shuffledDeck);
     }
 
     @Test
@@ -19,9 +19,9 @@ public class JUnitDeckTest{
         Deck testDeck = new Deck();
         Card topCard = testDeck.getCardList().get(0);
         Card dealtCard = testDeck.deal();
-        System.out.println("Top Card = Card Dealt");
+        System.out.println("Top Main.Card = Main.Card Dealt");
         System.out.println(topCard.toString() + " = " + dealtCard.toString());
-        assertEquals(topCard, dealtCard);
+        Assert.assertEquals(topCard, dealtCard);
     }
 
 }

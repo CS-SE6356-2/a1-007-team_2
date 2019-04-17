@@ -14,7 +14,7 @@ public class MainGUI extends Application {
     // Setup stage for the main game window
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("/GUI/CrazyEightsGUI.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("CrazyEightsGUI.fxml"));
         primaryStage.setTitle("Crazy Eights");
         Image anotherIcon = new Image("https://upload.wikimedia.org/wikipedia/en/thumb/4/47/C8_logo" +
                 ".jpg/1200px-C8_logo.jpg");

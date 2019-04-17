@@ -1,10 +1,10 @@
+import org.junit.Assert;
 import org.junit.Test;
-import static org.junit.Assert.*;
 import java.util.ArrayList;
 
 public class JUnitPlayerTest {
 
-    //Test to verify that a Player's hand is properly set
+    //Test to verify that a Main.Player's hand is properly set
     @Test
     public void testSetHand(){
         Deck testDeck = new Deck();
@@ -18,6 +18,6 @@ public class JUnitPlayerTest {
 
         testPlayerList.add(testPlayer);
         testDeck.dealToPlayers(testPlayerList, testDeck);
-        assertEquals(testPlayer.getHand(), testHand);
+        Assert.assertEquals(testPlayer.getHand(), testHand);
     }
 }

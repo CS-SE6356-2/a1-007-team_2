@@ -4,9 +4,9 @@ import org.junit.runners.Suite;
 @RunWith(Suite.class)
 
 @Suite.SuiteClasses({
-        // Test Class for Deck
+        // Test Class for Main.Deck
         JUnitDeckTest.class,
-        // Test Class for Pile
+        // Test Class for Main.Pile
         JUnitPileTest.class
 })
 

@@ -45,7 +45,7 @@
                <children>
                   <ImageView fitHeight="687.0" fitWidth="999.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@images/table.jpg" />
+                        <Image url="@images/cards/table.jpg" />
                      </image>
                   </ImageView>
                </children>
@@ -107,28 +107,28 @@
                <children>
                   <ImageView fx:id="deckImg" fitHeight="158.0" fitWidth="120.0" onMouseClicked="#draw" pickOnBounds="true" preserveRatio="true" translateX="25.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
                      <image>
-                        <Image url="@images/back5.png" />
+                        <Image url="@images/cards/back5.png" />
                      </image>
                   </ImageView>
                   <ImageView fx:id="pileImg" fitHeight="158.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" translateX="25.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
                   <ImageView fitHeight="134.0" fitWidth="111.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
                      <image>
-                        <Image url="@images/back5.png" />
+                        <Image url="@images/cards/back5.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="149.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true" rotate="90.0" translateX="30.0" GridPane.columnIndex="5" GridPane.rowIndex="1">
                      <image>
-                        <Image url="@images/back5.png" />
+                        <Image url="@images/cards/back5.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="138.0" fitWidth="108.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0" translateX="25.0" GridPane.rowIndex="3">
                      <image>
-                        <Image url="@images/back5.png" />
+                        <Image url="@images/cards/back5.png" />
                      </image>
                   </ImageView>
                   <ImageView fx:id="playerOneHand" fitHeight="134.0" fitWidth="109.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="4">
                      <image>
-                        <Image url="@images/back5.png" />
+                        <Image url="@images/cards/back5.png" />
                      </image>
                   </ImageView>
                </children>

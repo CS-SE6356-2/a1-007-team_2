@@ -3,20 +3,20 @@ import java.util.ArrayList;
 
 public class CrazyEights {
 
-    // Constructor for the CrazyEights game Class
+    // Constructor for the Main.CrazyEights game Class
     public CrazyEights(){
     }
-        // Start a Single Player Game
-        ArrayList<Player> startLocalGame(String playerName) {
-        ArrayList<Player> playerList = new ArrayList<>(4);
-        playerList.add(new Player(playerName));
-        playerList.add(new Player("Two"));
-        playerList.add(new Player("Three"));
-        playerList.add(new Player("Four"));
-        return playerList;
+        // Start a Single Main.Player Game
+        public ArrayList<Player> startLocalGame(String playerName) {
+            ArrayList<Player> playerList = new ArrayList<>(4);
+            playerList.add(new Player(playerName));
+            playerList.add(new Player("Two"));
+            playerList.add(new Player("Three"));
+            playerList.add(new Player("Four"));
+            return playerList;
     }
 
-    // Creates a Deck for the game and deals to each of the players
+    // Creates a Main.Deck for the game and deals to each of the players
     public Deck gameDeck(ArrayList<Player> players) {
         Deck deck = new Deck();
         deck.shuffle();
@@ -24,14 +24,14 @@ public class CrazyEights {
         return deck;
     }
 
-    // Creates a Discard Pile to be used during the game and updates the UI
+    // Creates a Discard Main.Pile to be used during the game and updates the UI
     public Pile stockPile(Deck deck, Controller controller){
         Pile stockPile = new Pile(deck.deal());
         controller.updatePile(stockPile.getTopCard());
         return stockPile;
     }
 
-    // Adds a playable card to the Pile and updates the player hand and UI
+    // Adds a playable card to the Main.Pile and updates the player hand and UI
     private void playCard(Player player, Card playCard, Pile pile, Controller controller){
         pile.addCard(playCard);
         controller.updatePile(playCard);
@@ -43,23 +43,23 @@ public class CrazyEights {
     private void checkForWinner(Player player){
         if (player.getHand().size() == 0){
             JFrame frame = new JFrame();
-            JOptionPane.showMessageDialog(frame, "Player "+player.getPlayerName()+" WINS!");
+            JOptionPane.showMessageDialog(frame, "Main.Player "+player.getPlayerName()+" WINS!");
             System.exit(0);
         }
     }
 
-//    TODO add method to choose suit of value to Pile
-//    private Card playEight(){
+//    TODO add method to choose suit of value to Main.Pile
+//    private Main.Card playEight(){
 //
 //    }
 
-    // If the Deck is empty at the end of the players turn method calculateScore()
+    // If the Main.Deck is empty at the end of the players turn method calculateScore()
     // is called to see which player has the least amount of points based on cards in hand
     public void calculateScores(ArrayList<Player> players){
         JPanel frame = new JPanel();
         String scoreMessage = "";
         for (Player player:players){
-            scoreMessage = scoreMessage.concat("Player " + player.getPlayerName() +
+            scoreMessage = scoreMessage.concat("Main.Player " + player.getPlayerName() +
                     " Score:" + player.getHandScore() + "\n");
         }
         JOptionPane.showMessageDialog(frame, scoreMessage);
@@ -79,7 +79,7 @@ public class CrazyEights {
             playCard(player, playCard, pile, controller);
             AIPlay(players, deck, pile, controller);
         } else {
-            JOptionPane.showMessageDialog(null, "Card is not Playable. Please Choose Another Card.");
+            JOptionPane.showMessageDialog(null, "Main.Card is not Playable. Please Choose Another Main.Card.");
         }
 
         checkForWinner(player);
@@ -88,7 +88,7 @@ public class CrazyEights {
 
     // At the end of the user's turn the method AIPlay() is called to update
     // the pile if the AI player haa a playable card then update the UI
-    public void AIPlay(ArrayList<Player> players, Deck deck, Pile stockPile, Controller controller){
+    private void AIPlay(ArrayList<Player> players, Deck deck, Pile stockPile, Controller controller){
         Card topPile = stockPile.getTopCard();
         int playableCard = 0;
         boolean hasPlayable = false;
@@ -107,7 +107,7 @@ public class CrazyEights {
             }
 
             // if a playable exists in the players hand
-            // the Card is added to the Pile and the UI is updated
+            // the Main.Card is added to the Main.Pile and the UI is updated
             if (hasPlayable){
                 controller.updatePile(players.get(i).getHand().get(playableCard));
                 stockPile.addCard(players.get(i).getHand().get(playableCard));
