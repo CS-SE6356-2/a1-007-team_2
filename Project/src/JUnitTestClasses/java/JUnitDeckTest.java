@@ -19,7 +19,7 @@ public class JUnitDeckTest{
         Deck testDeck = new Deck();
         Card topCard = testDeck.getCardList().get(0);
         Card dealtCard = testDeck.deal();
-        System.out.println("Top Main.Card = Main.Card Dealt");
+        System.out.println("Top Card = Card Dealt");
         System.out.println(topCard.toString() + " = " + dealtCard.toString());
         Assert.assertEquals(topCard, dealtCard);
     }

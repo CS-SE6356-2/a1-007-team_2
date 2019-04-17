@@ -11,7 +11,7 @@ public class JUnitPileTest {
         Pile testPile = new Pile(testCard);
         testCard = testDeck.deal();
         testPile.addCard(testCard);
-        System.out.println("Main.Pile Top Main.Card = Last Main.Card Added");
+        System.out.println("Pile Top Card = Last Card Added");
         System.out.println(testPile.getTopCard() + " = " + testCard);
         Assert.assertEquals(testPile.getTopCard(), testCard);
     }

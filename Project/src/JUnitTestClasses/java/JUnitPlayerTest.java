@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class JUnitPlayerTest {
 
-    //Test to verify that a Main.Player's hand is properly set
+    //Test to verify that a Player's hand is properly set
     @Test
     public void testSetHand(){
         Deck testDeck = new Deck();
