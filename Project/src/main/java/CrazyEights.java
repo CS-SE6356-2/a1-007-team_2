@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class CrazyEights {
 
@@ -50,7 +51,7 @@ public class CrazyEights {
 
 //    TODO add method to choose suit of value to Main.Pile
 //    private Card playEight(){
-//
+//      //dialogue box asks user which suit to choose
 //    }
 
     // If the Deck is empty at the end of the players turn method calculateScore()
@@ -87,7 +88,7 @@ public class CrazyEights {
     }
 
     // At the end of the user's turn the method AIPlay() is called to update
-    // the pile if the AI player haa a playable card then update the UI
+    // the pile if the AI player has a playable card then update the UI
     private void AIPlay(ArrayList<Player> players, Deck deck, Pile stockPile, Controller controller){
         Card topPile = stockPile.getTopCard();
         int playableCard = 0;
@@ -96,6 +97,11 @@ public class CrazyEights {
         // loop through AI players cards to see if they
         // have a card that can be played on the pile
         for (int i = 1; i < 3; i++){
+            // Pause to mimic an AI player making their choice; 5-10 seconds
+            Random rand = new Random();
+            int sleepTime = rand.nextInt(5);
+            TimeUnit.SECONDS.sleep(sleepTime+5);
+
             ArrayList<Card> playerCards = players.get(i).getHand();
             for (Card c : playerCards){
                 if (c.getSuit().equals(topPile.getSuit())||c.getValue().equals(topPile.getValue())) {
