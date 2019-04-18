@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Deck {
 
-    // attributes of the Main.Deck class
+    // attributes of the Deck class
     private ArrayList<Card> cardList;
 
     // Constructor
@@ -15,7 +15,7 @@ public class Deck {
         }
     }
 
-    // Method to shuffle the Main.Deck instance
+    // Method to shuffle the Deck instance
     public void shuffle() {
         ArrayList<Card> temp = new ArrayList<>();
         while(!cardList.isEmpty()) {
@@ -26,7 +26,7 @@ public class Deck {
         cardList = temp;
     }
 
-    // Method to deal five cards to a player from the Main.Deck instance
+    // Method to deal five cards to a player from the Deck instance
     public void dealToPlayers(ArrayList<Player> playerList, Deck deck) {
         for (int i = 0; i < 5; i++) {
             for (Player p:playerList) {
@@ -40,12 +40,12 @@ public class Deck {
         return cardList.remove(0);
     }
 
-    // Method to get the cardList of a Main.Deck
+    // Method to get the cardList of a Deck
     public ArrayList<Card> getCardList() {
         return cardList;
     }
 
-    // Print the cards in the instance of a Main.Deck
+    // Print the cards in the instance of a Deck
     // Used for testing purposes
     public void printCards() {
         int i = 1;

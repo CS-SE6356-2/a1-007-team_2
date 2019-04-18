@@ -2,7 +2,7 @@ import java.util.Stack;
 
 public class Pile {
 
-    // attributes for Main.Pile class
+    // attributes for Pile class
     private Stack<Card> discardPile = new Stack<>();
 
     // Constructor

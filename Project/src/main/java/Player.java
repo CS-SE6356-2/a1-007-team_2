@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Player {
 
-    // attributes of Main.Player class
+    // attributes of Player class
     private String playerName;
     private ArrayList<Card> playerHand = new ArrayList<>(5);
 
@@ -13,7 +13,7 @@ public class Player {
         this.playerName = name;
     }
 
-    // Set a ArrayList of Main.Card objects as the players hand
+    // Set a ArrayList of Card objects as the players hand
     public ArrayList<Card> getHand(){
         return playerHand;
     }

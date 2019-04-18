@@ -1,6 +1,6 @@
 public class Card {
 
-    // attributes of the Main.Card class
+    // attributes of the Card class
     private String[] Suit = {"Diamond", "Spade", "Club", "Heart"};
     private String[] Value = {"2","3","4","5","6","7","8","9","10","J","Q","K","A"};
     private String cardType, cardValue;
@@ -11,18 +11,18 @@ public class Card {
         cardValue = this.Value[rank];
     }
 
-    // Get Main.Card suit
+    // Get Card suit
     public String getSuit() {
         return cardType;
     }
 
-    // Get Main.Card value
+    // Get Card value
     public String getValue() {
         return cardValue;
     }
 
-    // Override Method for Main.Card.toString()
-    // Prints the suit and value of a Main.Card object
+    // Override Method for Card.toString()
+    // Prints the suit and value of a Card object
     @Override
     public String toString(){
         return (this.getValue() + " " + this.getSuit());

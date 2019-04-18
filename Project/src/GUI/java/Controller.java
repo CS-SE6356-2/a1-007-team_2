@@ -59,7 +59,7 @@ public class Controller{
                 JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null,
                 choices, choices[0]);
 
-        // If Option to play a Single Main.Player game is selected Initialize the game
+        // If Option to play a Single Player game is selected Initialize the game
         if (result == JOptionPane.YES_OPTION){
             this.game = new CrazyEights();
             this.players = game.startLocalGame(playerOneName.getText());
