@@ -1,8 +1,10 @@
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 public class CrazyEights {
+    private String chosenSuit;
 
     // Constructor for the Main.CrazyEights game Class
     public CrazyEights(){
@@ -29,6 +31,7 @@ public class CrazyEights {
     public Pile stockPile(Deck deck, Controller controller){
         Pile stockPile = new Pile(deck.deal());
         controller.updatePile(stockPile.getTopCard());
+        this.chosenSuit = stockPile.getTopCard().getSuit();
         return stockPile;
     }
 
@@ -49,10 +52,21 @@ public class CrazyEights {
         }
     }
 
-//    TODO add method to choose suit of value to Main.Pile
-//    private Card playEight(){
-//      //dialogue box asks user which suit to choose
-//    }
+    // Method to choose suit of value to Main.Pile
+    private void playEight(){
+        JFrame frame = new JFrame();
+        Object[] suitChoices = {"Diamonds", "Spades", "Clubs", "Hearts"};
+        String s = (String)JOptionPane.showInputDialog(frame, "Choose your suit.", "Suit Choice", JOptionPane.PLAIN_MESSAGE, icon, suitChoices);
+
+        //If a string was returned
+        if ((s != null) && (s.length() > 0)) {
+            chosenSuit = s;
+            return;
+        }
+
+        //If the return value was null/empty.
+        //setLabel("Please choose a suit.");
+    }
 
     // If the Deck is empty at the end of the players turn method calculateScore()
     // is called to see which player has the least amount of points based on cards in hand
@@ -74,7 +88,7 @@ public class CrazyEights {
 
         if (playCard.getValue().equals("8")){
             playCard(player, playCard, pile, controller);
-            // TODO add ability to choose the suite or value
+            // TODO add ability to choose the suit or value
             AIPlay(players, deck, pile, controller);
         } else if(playCard.getSuit().equals(pile.getTopCard().getSuit()) || playCard.getValue().equals(pile.getTopCard().getValue())){
             playCard(player, playCard, pile, controller);
@@ -85,6 +99,13 @@ public class CrazyEights {
 
         checkForWinner(player);
 
+    }
+
+    private boolean isPlayable(Card c, Card top){
+        if(c.getSuit().equals(chosenSuit)||c.getValue().equals(top.getValue())){
+            return true;
+        }
+        return false;
     }
 
     // At the end of the user's turn the method AIPlay() is called to update
@@ -100,7 +121,12 @@ public class CrazyEights {
             // Pause to mimic an AI player making their choice; 5-10 seconds
             Random rand = new Random();
             int sleepTime = rand.nextInt(5);
-            TimeUnit.SECONDS.sleep(sleepTime+5);
+            try {
+                TimeUnit.SECONDS.sleep(sleepTime+5);
+            } catch(InterruptedException e) {
+                System.out.println("Error! Player "+i+" was interrupted!");
+            }
+
 
             ArrayList<Card> playerCards = players.get(i).getHand();
             for (Card c : playerCards){
