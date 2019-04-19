@@ -7,7 +7,9 @@ import org.junit.runners.Suite;
         // Test Class for Deck
         JUnitDeckTest.class,
         // Test Class for Pile
-        JUnitPileTest.class
+        JUnitPileTest.class,
+        // Test Class for Card
+        JUnitCardTest.class
 })
 
 public class JUnitTestSuite {
