@@ -15,29 +15,11 @@ public class Card {
     public String getSuit() {
         return cardType;
     }
-@Test
-public void testGetSuit() {
-    System.out.println("getSuit");
-    Flight instance = new Flight();
-    string expResult = "Diamond";
-    instance.setGetSuit("Diamond");
-    string result = instance.getSuit();
-    assertEquals(expResult, result);
-}
+
     // Get Card value
     public String getValue() {
         return cardValue;
     }
-    
-    @Test
-public void testGetCardValue() {
-    System.out.println("getCardValue");
-    Flight instance = new Flight();
-    string expResult = "2";
-    instance.setCardValue("2");
-    string result = instance.getCardValue();
-    assertEquals(expResult, result);
-}
 
     // Override Method for Card.toString()
     // Prints the suit and value of a Card object
