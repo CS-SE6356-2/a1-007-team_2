@@ -61,10 +61,10 @@ public class Controller{
 
         // If Option to play a Single Player game is selected Initialize the game
         if (result == JOptionPane.YES_OPTION){
-            this.game = new CrazyEights();
-            this.players = game.startLocalGame(playerOneName.getText());
-            this.deck = game.gameDeck(this.players);
-            this.pile = game.stockPile(this.deck, Controller.this);
+            game = new CrazyEights();
+            players = game.startLocalGame(playerOneName.getText());
+            deck = game.gameDeck(this.players);
+            pile = game.stockPile(this.deck, Controller.this);
             mainGrid.getChildren().remove(playerOneHand);
             updatePlayerCards();
         } else {

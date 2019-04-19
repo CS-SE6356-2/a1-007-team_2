@@ -52,17 +52,19 @@ public class CrazyEights {
         }
     }
 
-    // Method to choose suit of value to Main.Pile
-    private void playEight(){
+    // Method to choose suit of value to Pile
+    private void playEight(Pile pile, Controller controller){
         JFrame frame = new JFrame();
-        Object[] suitChoices = {"Diamonds", "Spades", "Clubs", "Hearts"};
-        String s = (String)JOptionPane.showInputDialog(frame, "Choose your suit.", "Suit Choice", JOptionPane.PLAIN_MESSAGE, icon, suitChoices);
+        String[] suitChoices = {"Diamonds", "Spades", "Clubs", "Hearts"};
+        int s = JOptionPane.showOptionDialog(frame, "Choose your suit.", "Suit Choice",
+                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, suitChoices, suitChoices[0]);
 
-        //If a string was returned
-        if ((s != null) && (s.length() > 0)) {
-            chosenSuit = s;
-            return;
-        }
+        // determine suit to play based on option selected
+        // then add a dummy card to the pile
+        Card dummyCard = new Card(s, s);
+        pile.addCard(dummyCard);
+
+        controller.updatePile(dummyCard);
 
         //If the return value was null/empty.
         //setLabel("Please choose a suit.");
@@ -88,7 +90,7 @@ public class CrazyEights {
 
         if (playCard.getValue().equals("8")){
             playCard(player, playCard, pile, controller);
-            // TODO add ability to choose the suit or value
+            playEight(pile, controller);
             AIPlay(players, deck, pile, controller);
         } else if(playCard.getSuit().equals(pile.getTopCard().getSuit()) || playCard.getValue().equals(pile.getTopCard().getValue())){
             playCard(player, playCard, pile, controller);
@@ -119,13 +121,13 @@ public class CrazyEights {
         // have a card that can be played on the pile
         for (int i = 1; i < 3; i++){
             // Pause to mimic an AI player making their choice; 5-10 seconds
-            Random rand = new Random();
-            int sleepTime = rand.nextInt(5);
-            try {
-                TimeUnit.SECONDS.sleep(sleepTime+5);
-            } catch(InterruptedException e) {
-                System.out.println("Error! Player "+i+" was interrupted!");
-            }
+//            Random rand = new Random();
+//            int sleepTime = rand.nextInt(5);
+//            try {
+//                TimeUnit.SECONDS.sleep(2);
+//            } catch(InterruptedException e) {
+//                System.out.println("Error! Player "+i+" was interrupted!");
+//            }
 
 
             ArrayList<Card> playerCards = players.get(i).getHand();
