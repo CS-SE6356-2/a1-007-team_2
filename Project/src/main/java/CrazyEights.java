@@ -1,9 +1,13 @@
+import javafx.scene.layout.GridPane;
+
 import javax.swing.*;
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 public class CrazyEights {
+
     private String chosenSuit;
 
     // Constructor for the Main.CrazyEights game Class
@@ -54,17 +58,28 @@ public class CrazyEights {
 
     // Method to choose suit of value to Pile
     private void playEight(Pile pile, Controller controller){
+        Card card = new Card();
+        int i = 0;
+        String[] choices = {"Diamond", "Spade", "Club", "Heart", "2", "3", "4", "5", "6", "7", "8", "9", "10",
+                "Jack", "Queen", "King", "Ace"};
+
+
         JFrame frame = new JFrame();
-        String[] suitChoices = {"Diamonds", "Spades", "Clubs", "Hearts"};
-        int s = JOptionPane.showOptionDialog(frame, "Choose your suit.", "Suit Choice",
-                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, suitChoices, suitChoices[0]);
+        String result = JOptionPane.showInputDialog(frame, "Enter selected suit or value: \n i.e. King, Club, 5, " +
+                "Spade, Ace, 10");
 
         // determine suit to play based on option selected
         // then add a dummy card to the pile
-        Card dummyCard = new Card(s, s);
-        pile.addCard(dummyCard);
 
-        controller.updatePile(dummyCard);
+        for (String selection: choices){
+            if (result.equals(selection)) {
+                card = card.dummyCard(i);
+            }
+            i++;
+        }
+
+        pile.addCard(card);
+        controller.playersChoice(card);
 
         //If the return value was null/empty.
         //setLabel("Please choose a suit.");
@@ -103,8 +118,8 @@ public class CrazyEights {
 
     }
 
-    private boolean isPlayable(Card c, Card top){
-        if(c.getSuit().equals(chosenSuit)||c.getValue().equals(top.getValue())){
+    private boolean isPlayable(Card c, Pile top){
+        if(c.getSuit().equals(chosenSuit)||c.getValue().equals(top.getTopCard().getValue())){
             return true;
         }
         return false;
@@ -150,7 +165,8 @@ public class CrazyEights {
 
                 if (deck.getCardList().size() > 0){
                     players.get(i).getHand().add(deck.deal());
-                }else{
+
+                } else {
                     calculateScores(players);
                 }
             }
