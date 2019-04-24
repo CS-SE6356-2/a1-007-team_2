@@ -4,7 +4,8 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.*;
+import javafx.scene.layout.GridPane;
+
 import javax.swing.*;
 import java.util.ArrayList;
 
@@ -96,8 +97,8 @@ public class Controller{
             image.setFitWidth(111);
 
             // eventHandler to play a card once it is clicked
-            image.setOnMouseClicked(event -> game.turnPlay(cards.indexOf(c), players,
-                    deck, pile, Controller.this));
+            image.setOnMouseClicked(event -> {game.turnPlay(cards.indexOf(c), players,
+                            deck, pile, Controller.this); });
 
             // Draws the hand in the order of the cards in the players hand
             // If statement to decide which row to display the cards on
@@ -140,4 +141,16 @@ public class Controller{
         pileImg.setImage(pic);
     }
 
+    // Updates the the UI with the most recent card played
+    public void playersChoice(Card card){
+        String playCard;
+        if (card.getValue() == null){
+            playCard = card.getSuit();
+        } else {
+            playCard = card.getValue();
+        }
+        String imagePath = String.valueOf(getClass().getResource("images/cards/" + playCard + ".png"));
+        Image pic = new Image(imagePath);
+        pileImg.setImage(pic);
+    }
 }
