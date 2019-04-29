@@ -27,8 +27,8 @@
         </Menu>
         <Menu mnemonicParsing="false" text="Help">
           <items>
-            <MenuItem fx:id="menuAbout" mnemonicParsing="false" text="About Crazy Eights" />
-                  <MenuItem fx:id="menuContact" mnemonicParsing="false" text="Contact" />
+            <MenuItem fx:id="menuAbout" mnemonicParsing="false" onAction="#rules" text="About Crazy Eights" />
+                  <MenuItem fx:id="menuContact" mnemonicParsing="false" onAction="#contact" text="Contact" />
           </items>
         </Menu>
       </menus>
@@ -71,12 +71,12 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label fx:id="playerTwoName" alignment="TOP_CENTER" prefHeight="83.0" prefWidth="123.0" text="Player 2" textAlignment="CENTER" textFill="WHITE" translateX="50.0" translateY="-20.0" GridPane.columnIndex="2">
+                  <Label fx:id="playerTwoName" alignment="TOP_CENTER" prefHeight="83.0" prefWidth="123.0" text="Player 3" textAlignment="CENTER" textFill="WHITE" translateX="50.0" translateY="-20.0" GridPane.columnIndex="2">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label fx:id="playerThreeName" alignment="TOP_CENTER" prefHeight="74.0" prefWidth="115.0" rotate="-90.0" text="Player 3" textFill="WHITE" GridPane.rowIndex="2">
+                  <Label fx:id="playerThreeName" alignment="TOP_CENTER" prefHeight="74.0" prefWidth="115.0" rotate="-90.0" text="Player 2" textFill="WHITE" GridPane.rowIndex="2">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -110,23 +110,23 @@
                         <Image url="@images/cards/back5.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="pileImg" fitHeight="158.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" translateX="25.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-                  <ImageView fitHeight="134.0" fitWidth="111.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
+                  <ImageView fx:id="pileImg" fitHeight="158.0" fitWidth="135.0" pickOnBounds="true" preserveRatio="true" translateX="25.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  <ImageView fx:id="playerThreeHand" fitHeight="158.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" translateY="9.0" GridPane.columnIndex="2">
                      <image>
                         <Image url="@images/cards/back5.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="149.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true" rotate="90.0" translateX="30.0" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                  <ImageView fx:id="playerFourHand" fitHeight="158.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" rotate="90.0" translateX="30.0" GridPane.columnIndex="5" GridPane.rowIndex="1">
                      <image>
                         <Image url="@images/cards/back5.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="138.0" fitWidth="108.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0" translateX="25.0" GridPane.rowIndex="3">
+                  <ImageView fx:id="playerTwoHand" fitHeight="158.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0" translateX="25.0" GridPane.rowIndex="3">
                      <image>
                         <Image url="@images/cards/back5.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="playerOneHand" fitHeight="134.0" fitWidth="109.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                  <ImageView fx:id="playerOneHand" fitHeight="158.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" translateY="-9.0" GridPane.columnIndex="4" GridPane.rowIndex="4">
                      <image>
                         <Image url="@images/cards/back5.png" />
                      </image>
