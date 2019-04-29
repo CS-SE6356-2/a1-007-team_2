@@ -7,6 +7,7 @@ public class Player {
     // attributes of Player class
     private String playerName;
     private ArrayList<Card> playerHand = new ArrayList<>(5);
+    private int playerIndex;
 
     // Constructor
     public Player(String name){
@@ -21,6 +22,14 @@ public class Player {
     // Get player name
     public String getPlayerName() {
         return playerName;
+    }
+
+    public void setPlayerIndex(int playerIndex) {
+        this.playerIndex = playerIndex;
+    }
+
+    public int getPlayerIndex() {
+        return playerIndex;
     }
 
     // Get players hand score
