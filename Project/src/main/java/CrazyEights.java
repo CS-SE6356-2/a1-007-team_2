@@ -121,7 +121,7 @@ public class CrazyEights {
         }
         return false;
     }
-    
+
     // At the end of the user's turn the method AIPlay() is called to update
     // the pile if the AI player has a playable card then update the UI
     public void AIPlay(ArrayList<Player> players, Deck deck, Pile stockPile, Controller controller){
@@ -154,6 +154,9 @@ public class CrazyEights {
 
                 if (deck.getCardList().size() > 0){
                     players.get(i).getHand().add(deck.deal());
+                } else {
+                    checkForWinner(players);
+                    break;
                 }
             }
         }
